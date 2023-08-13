@@ -1,0 +1,16 @@
+<!-- restaurant/templates/restaurant/menu_list.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu List</title>
+</head>
+<body>
+    <h1>Menu List</h1>
+    <ul>
+        {% for dish in dishes %}
+            <li>{{ dish.name }} - ${{ dish.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!-- restaurant/templates/restaurant/place_order.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Place Order</title>
+</head>
+<body>
+    <h1>Place Order</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="customer_name">Customer Name:</label>
+        <input type="text" id="customer_name" name="customer_name" required><br>
+        <label for="dish_id">Select Dish:</label>
+        <select id="dish_id" name="dish_id" multiple>
+            {% for dish in dishes %}
+                <option value="{{ dish.id }}">{{ dish.name }} - ${{ dish.price }}</option>
+            {% endfor %}
+        </select><br>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>

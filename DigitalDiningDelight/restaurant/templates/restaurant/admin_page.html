@@ -1,0 +1,16 @@
+<!-- restaurant/templates/restaurant/admin_page.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>Admin Page</h1>
+    <ul>
+        {% for order in orders %}
+            <li>{{ order.customer_name }} - {{ order.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
